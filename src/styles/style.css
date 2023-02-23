@@ -1,0 +1,58 @@
+#root img  {
+
+    height: 465px;
+    width: 460px;
+    margin-top: 60px;
+    margin-left: 40px;
+
+}
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.botao {
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #27AE60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 89px;
+    margin-left: 00px;
+    cursor:pointer;
+}
+span {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+button {
+    width: 40px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    background-color:  #798A9F;
+    margin: 10px;
+}
+.teclado {
+    display: flex;
+    align-items: end;
+    height: 100px;
+    width: 800px;
+    flex-wrap: wrap;
+    margin-top: 550px;
+    margin-right: 400px;
+}
+.botaoteclado {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
