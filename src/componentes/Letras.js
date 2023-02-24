@@ -1,3 +1,5 @@
+import Jogo from "./Jogo";
+
 export default function Letras(props){
 
     return (

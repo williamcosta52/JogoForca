@@ -1,13 +1,13 @@
 import { useState } from "react";
 import palavras from "../palavras"
 
-
-
 export default function Jogo(){
 
-    const [mostrarPalavra, setMostrarPalavra] = useState("_ _ _ _ _ _");
+    const [mostrarPalavra, setMostrarPalavra] = useState("");
 
     const novaLista = [...palavras];
+
+    const palavraOculta = [];
     
     return (
         <><div className="botao" onClick={SortearPalavra}><span>Escolher Palavra</span></div><div className="palavra">
@@ -21,7 +21,14 @@ export default function Jogo(){
 
         const mostrando = novaLista[palavra];
 
-        setMostrarPalavra(mostrando)
-    
+        for (let i = 0; i < mostrando.length; i++){
+
+            palavraOculta.push("_");
+        }
+        setMostrarPalavra(palavraOculta)
+        
+
     }
+    
+    
 }
