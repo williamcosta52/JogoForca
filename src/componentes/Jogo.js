@@ -1,9 +1,7 @@
 import { useState } from "react";
 import palavras from "../palavras"
 
-export default function Jogo(){
-
-    const [mostrarPalavra, setMostrarPalavra] = useState("");
+export default function Jogo(props){
 
     const novaLista = [...palavras];
 
@@ -11,7 +9,7 @@ export default function Jogo(){
     
     return (
         <><div className="botao" onClick={SortearPalavra}><span>Escolher Palavra</span></div><div className="palavra">
-            <span className="palavraSorteada">{mostrarPalavra}</span>
+            <span className="palavraSorteada">{props.mostrarPalavra}</span>
         </div></>
     )
     
@@ -23,12 +21,12 @@ export default function Jogo(){
 
         for (let i = 0; i < mostrando.length; i++){
 
-            palavraOculta.push("_");
+            palavraOculta.push("_ ");
         }
-        setMostrarPalavra(palavraOculta)
-        
+        props.setPalavraSelecionada(mostrando)
 
-    }
-    
-    
+        props.setMostrarPalavra(palavraOculta)
+
+        {props.setDesabilitado(false)}
+    }   
 }
