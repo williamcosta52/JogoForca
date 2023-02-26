@@ -1,6 +1,5 @@
 import Jogo from "./componentes/Jogo";
 import Letras from "./componentes/Letras";
-import palavras from "./palavras";
 import "./styles/reset.css";
 import "./styles/style.css";
 import forca0 from "./assets/forca0.png";
@@ -24,11 +23,13 @@ export default function App(props) {
 
   const [palavraSelecionada, setPalavraSelecionada] = useState("");
 
-  const [imagem, setImagem] = useState(forca0)
+  const [imagem, setImagem] = useState(forca0);
 
   const [letraClicada, setLetraClicada] = useState([]);
 
-  console.log(palavraSelecionada)
+  const [erro, setErro] = useState([]);
+
+  const [errouPalavra, setErrouPalavra] = useState("palavraSorteada");
 
   return (
     <div className="container">
@@ -39,7 +40,12 @@ export default function App(props) {
     setDesabilitado={setDesabilitado}
     mostrarPalavra={mostrarPalavra}
     setMostrarPalavra={setMostrarPalavra}
+    palavraSelecionada={palavraSelecionada}
     setPalavraSelecionada={setPalavraSelecionada}
+    erro={erro}
+    setErro={setErro}
+    errouPalavra={errouPalavra}
+    setErrouPalavra={setErrouPalavra}
     />
         <div className="teclado">
           {alfabeto.map((letra, index) =>{
@@ -55,6 +61,12 @@ export default function App(props) {
                 setLetraClicada={setLetraClicada}
                 mostrarPalavra={mostrarPalavra}
                 setMostrarPalavra={setMostrarPalavra}
+                imagem={imagem}
+                erro={erro}
+                setErro={setErro}
+                setDesabilitado={setDesabilitado}
+                errouPalavra={errouPalavra}
+                setErrouPalavra={setErrouPalavra}
                 />
             );
           })}

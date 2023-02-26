@@ -1,4 +1,3 @@
-import { useState } from "react";
 import palavras from "../palavras"
 
 export default function Jogo(props){
@@ -9,7 +8,7 @@ export default function Jogo(props){
     
     return (
         <><div className="botao" onClick={SortearPalavra}><span>Escolher Palavra</span></div><div className="palavra">
-            <span className="palavraSorteada">{props.mostrarPalavra}</span>
+            <span className={props.errouPalavra}>{props.mostrarPalavra}</span>
         </div></>
     )
     
@@ -21,12 +20,12 @@ export default function Jogo(props){
 
         for (let i = 0; i < mostrando.length; i++){
 
-            palavraOculta.push("_ ");
+            palavraOculta.push(" _ ");
         }
         props.setPalavraSelecionada(mostrando)
 
         props.setMostrarPalavra(palavraOculta)
 
-        {props.setDesabilitado(false)}
+        props.setDesabilitado(false)
     }   
 }

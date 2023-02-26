@@ -15,7 +15,20 @@ export default function Letras(props){
         if (props.palavraSelecionada.includes(props.letra)){
             setLetraSelecionada(true);
 
-            props.setMostrarPalavra(props.letra)
+            for (let i = 0; i < props.palavraSelecionada.length; i++){
+
+                if (props.palavraSelecionada[i] === props.letra){
+
+            props.setMostrarPalavra(props.mostrarPalavra.slice(props.mostrarPalavra[i] = props.letra))
+            
+        }
+
+        if (props.mostrarPalavra.join("") === props.palavraSelecionada){
+
+            props.setMostrarPalavra(props.palavraSelecionada);
+            props.setErrouPalavra("verde");
+        }
+            }
 
         }else if (!props.palavraSelecionada.includes(props.letra)){
             setLetraSelecionada(true);
@@ -23,6 +36,15 @@ export default function Letras(props){
             props.setLetraClicada([...props.letraClicada, props.letra]);
 
             props.setImagem(props.imagens[props.letraClicada.length + 1]);
+
+            props.setErro([...props.erro, props.letra]);
+
+            if (props.erro.length >= 5){
+                props.setDesabilitado(true);
+                props.setImagem(props.imagens[6]);
+                props.setMostrarPalavra(props.palavraSelecionada);
+                props.setErrouPalavra("vermelho");
+            }
         }
     }   
 }
