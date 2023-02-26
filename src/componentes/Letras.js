@@ -6,7 +6,7 @@ export default function Letras(props){
 
     return (
         <div>
-            <button disabled={props.desabilitado || letraSelecionada} onClick={clicou}>{props.letra.toUpperCase()}</button>
+            <button data-test="letter" disabled={props.desabilitado || letraSelecionada} onClick={clicou}>{props.letra.toUpperCase()}</button>
         </div>
     ) 
 
@@ -27,6 +27,7 @@ export default function Letras(props){
 
             props.setMostrarPalavra(props.palavraSelecionada);
             props.setErrouPalavra("verde");
+            props.setDesabilitado(true)
         }
             }
 

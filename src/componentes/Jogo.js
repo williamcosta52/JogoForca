@@ -7,8 +7,8 @@ export default function Jogo(props){
     const palavraOculta = [];
     
     return (
-        <><div className="botao" onClick={SortearPalavra}><span>Escolher Palavra</span></div><div className="palavra">
-            <span className={props.errouPalavra}>{props.mostrarPalavra}</span>
+        <><div className="botao" onClick={SortearPalavra} data-test="choose-word"><span>Escolher Palavra</span></div><div className="palavra">
+            <span data-test="word" className={props.errouPalavra}>{props.mostrarPalavra}</span>
         </div></>
     )
     
@@ -27,5 +27,7 @@ export default function Jogo(props){
         props.setMostrarPalavra(palavraOculta)
 
         props.setDesabilitado(false)
+
+        props.Reset()
     }   
 }

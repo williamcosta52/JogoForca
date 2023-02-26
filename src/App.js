@@ -31,9 +31,20 @@ export default function App(props) {
 
   const [errouPalavra, setErrouPalavra] = useState("palavraSorteada");
 
+  console.log(palavraSelecionada)
+
+  function Reset(){
+
+    if (palavraSelecionada !== ""){
+      window.location.reload()
+    }
+
+    
+  }
+
   return (
     <div className="container">
-      <img src={imagem} />
+      <img data-test="game-image" src={imagem} />
 
     <div className="botaoteclado">
     <Jogo 
@@ -46,6 +57,7 @@ export default function App(props) {
     setErro={setErro}
     errouPalavra={errouPalavra}
     setErrouPalavra={setErrouPalavra}
+    Reset={Reset}
     />
         <div className="teclado">
           {alfabeto.map((letra, index) =>{
