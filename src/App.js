@@ -25,6 +25,9 @@ export default function App(props) {
   const [errouPalavra, setErrouPalavra] = useState("palavraSorteada");
   const [verificarPalavra, setVerificarPalavra] = useState(false);
   const [array, setArray] = useState([])
+  const [fimDeJogo, setFimDeJogo] = useState(false)
+
+  console.log(palavraSelecionada)
 
   function Reset(){
 
@@ -37,7 +40,7 @@ export default function App(props) {
     setDesabilitado(false)
     setVerificarPalavra(true)
     setArray([])
-
+    setFimDeJogo(false)
     }
   }
 
@@ -84,6 +87,8 @@ export default function App(props) {
                 setVerificarPalavra={setVerificarPalavra}
                 array={array}
                 setArray={setArray}
+                fimDeJogo={fimDeJogo}
+                setFimDeJogo={setFimDeJogo}
                 />
             );
           })}

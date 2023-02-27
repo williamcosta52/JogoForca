@@ -4,7 +4,7 @@ export default function Letras(props){
 
     return (
         <div>
-            {props.palavraSelecionada !== "" && !props.array.includes(props.letra) ? <button data-test="letter" disabled={false} onClick={clicou}>{props.letra.toUpperCase()}</button> : <button data-test="letter" disabled={true} onClick={clicou}>{props.letra.toUpperCase()}</button>}
+            {props.palavraSelecionada !== "" && !props.array.includes(props.letra) && !props.fimDeJogo ? <button data-test="letter" disabled={false} onClick={clicou}>{props.letra.toUpperCase()}</button> : <button data-test="letter" disabled={true} onClick={clicou}>{props.letra.toUpperCase()}</button>}
         </div>
     )
     function clicou(){
@@ -19,7 +19,7 @@ export default function Letras(props){
         if (props.mostrarPalavra.join("") === props.palavraSelecionada){
             props.setMostrarPalavra(props.palavraSelecionada);
             props.setErrouPalavra("verde");
-            props.setDesabilitado(true)
+            props.setFimDeJogo(true)
         }
             }
         }else if (!props.palavraSelecionada.includes(props.letra)){
@@ -27,10 +27,10 @@ export default function Letras(props){
             props.setImagem(props.imagens[props.erro.length + 1]);
             props.setErro([...props.erro, props.letra]);
             if (props.erro.length >= 5){
-                props.setDesabilitado(true);
                 props.setImagem(props.imagens[6]);
                 props.setMostrarPalavra(props.palavraSelecionada);
                 props.setErrouPalavra("vermelho");
+                props.setFimDeJogo(true)
             }
         }
     }   
