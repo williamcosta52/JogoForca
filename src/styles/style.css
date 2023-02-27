@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 #root img  {
 
     height: 465px;
@@ -26,6 +28,7 @@
     margin-top: 89px;
     margin-left: 00px;
     cursor:pointer;
+    font-family: 'Roboto', sans-serif;
 }
 span {
     font-weight: 700;
@@ -45,6 +48,7 @@ button {
     margin: 10px;
     color: #39739D;
     cursor:pointer;
+    font-family: 'Roboto', sans-serif;
 }
 :disabled {
     background-color: 
@@ -84,6 +88,7 @@ button {
     font-weight: 700;
     line-height: 68px;
     letter-spacing: 10px;
+    font-family: 'Noto Sans', sans-serif;
 }
 .verde {
     color: #27AE60;
@@ -91,4 +96,5 @@ button {
     font-weight: 700;
     line-height: 68px;
     letter-spacing: 10px;
+    font-family: 'Noto Sans', sans-serif;
 }

@@ -16,30 +16,29 @@ const imagens = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 export default function App(props) {
-
   const  [desabilitado, setDesabilitado] = useState(true);
-
   const [mostrarPalavra, setMostrarPalavra] = useState("");
-
   const [palavraSelecionada, setPalavraSelecionada] = useState("");
-
   const [imagem, setImagem] = useState(forca0);
-
   const [letraClicada, setLetraClicada] = useState([]);
-
   const [erro, setErro] = useState([]);
-
   const [errouPalavra, setErrouPalavra] = useState("palavraSorteada");
-
-  console.log(palavraSelecionada)
+  const [verificarPalavra, setVerificarPalavra] = useState(false);
+  const [array, setArray] = useState([])
 
   function Reset(){
 
     if (palavraSelecionada !== ""){
-      window.location.reload()
-    }
 
-    
+    setImagem(forca0)
+    setLetraClicada([])
+    setErro([])
+    setErrouPalavra("palavraSorteada")
+    setDesabilitado(false)
+    setVerificarPalavra(true)
+    setArray([])
+
+    }
   }
 
   return (
@@ -58,6 +57,8 @@ export default function App(props) {
     errouPalavra={errouPalavra}
     setErrouPalavra={setErrouPalavra}
     Reset={Reset}
+    verificarPalavra={verificarPalavra}
+    setVerificarPalavra={setVerificarPalavra}
     />
         <div className="teclado">
           {alfabeto.map((letra, index) =>{
@@ -65,7 +66,7 @@ export default function App(props) {
               <Letras
                 key={index}
                 letra={letra}
-                desabilitado = {desabilitado}
+                desabilitado={desabilitado}
                 palavraSelecionada={palavraSelecionada}
                 imagens={imagens}
                 setImagem={setImagem}
@@ -79,6 +80,10 @@ export default function App(props) {
                 setDesabilitado={setDesabilitado}
                 errouPalavra={errouPalavra}
                 setErrouPalavra={setErrouPalavra}
+                verificarPalavra={verificarPalavra}
+                setVerificarPalavra={setVerificarPalavra}
+                array={array}
+                setArray={setArray}
                 />
             );
           })}
