@@ -16,7 +16,6 @@ const imagens = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 export default function App(props) {
-  const  [desabilitado, setDesabilitado] = useState(true);
   const [mostrarPalavra, setMostrarPalavra] = useState("");
   const [palavraSelecionada, setPalavraSelecionada] = useState("");
   const [imagem, setImagem] = useState(forca0);
@@ -24,33 +23,29 @@ export default function App(props) {
   const [erro, setErro] = useState([]);
   const [errouPalavra, setErrouPalavra] = useState("palavraSorteada");
   const [verificarPalavra, setVerificarPalavra] = useState(false);
-  const [array, setArray] = useState([])
-  const [fimDeJogo, setFimDeJogo] = useState(false)
-
-  console.log(palavraSelecionada)
+  const [array, setArray] = useState([]);
+  const [fimDeJogo, setFimDeJogo] = useState(false);
 
   function Reset(){
 
     if (palavraSelecionada !== ""){
 
-    setImagem(forca0)
-    setLetraClicada([])
-    setErro([])
-    setErrouPalavra("palavraSorteada")
-    setDesabilitado(false)
-    setVerificarPalavra(true)
-    setArray([])
-    setFimDeJogo(false)
+    setImagem(forca0);
+    setLetraClicada([]);
+    setErro([]);
+    setErrouPalavra("palavraSorteada");
+    setVerificarPalavra(true);
+    setArray([]);
+    setFimDeJogo(false);
     }
   }
 
   return (
     <div className="container">
-      <img data-test="game-image" src={imagem} />
+      <img data-test="game-image" alt="imagem" src={imagem} />
 
     <div className="botaoteclado">
     <Jogo 
-    setDesabilitado={setDesabilitado}
     mostrarPalavra={mostrarPalavra}
     setMostrarPalavra={setMostrarPalavra}
     palavraSelecionada={palavraSelecionada}
@@ -69,7 +64,6 @@ export default function App(props) {
               <Letras
                 key={index}
                 letra={letra}
-                desabilitado={desabilitado}
                 palavraSelecionada={palavraSelecionada}
                 imagens={imagens}
                 setImagem={setImagem}
@@ -80,7 +74,6 @@ export default function App(props) {
                 imagem={imagem}
                 erro={erro}
                 setErro={setErro}
-                setDesabilitado={setDesabilitado}
                 errouPalavra={errouPalavra}
                 setErrouPalavra={setErrouPalavra}
                 verificarPalavra={verificarPalavra}

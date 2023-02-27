@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function Letras(props){
 
     return (
@@ -9,17 +7,17 @@ export default function Letras(props){
     )
     function clicou(){
 
-        props.setArray([...props.array, props.letra])
+        props.setArray([...props.array, props.letra]);
 
         if (props.palavraSelecionada.includes(props.letra)){
             for (let i = 0; i < props.palavraSelecionada.length; i++){
                 if (props.palavraSelecionada[i] === props.letra){
-            props.setMostrarPalavra(props.mostrarPalavra.slice(props.mostrarPalavra[i] = props.letra))
+            props.setMostrarPalavra(props.mostrarPalavra.slice(props.mostrarPalavra[i] = props.letra));
         }
         if (props.mostrarPalavra.join("") === props.palavraSelecionada){
             props.setMostrarPalavra(props.palavraSelecionada);
             props.setErrouPalavra("verde");
-            props.setFimDeJogo(true)
+            props.setFimDeJogo(true);
         }
             }
         }else if (!props.palavraSelecionada.includes(props.letra)){
@@ -30,7 +28,7 @@ export default function Letras(props){
                 props.setImagem(props.imagens[6]);
                 props.setMostrarPalavra(props.palavraSelecionada);
                 props.setErrouPalavra("vermelho");
-                props.setFimDeJogo(true)
+                props.setFimDeJogo(true);
             }
         }
     }   

@@ -14,9 +14,8 @@ export default function Jogo(props){
         for (let i = 0; i < mostrando.length; i++){
             palavraOculta.push(" _ ");
         }
-        props.setPalavraSelecionada(mostrando)
-        props.setMostrarPalavra(palavraOculta)
-        props.setDesabilitado(false)
-        props.Reset()
+        props.setPalavraSelecionada(mostrando);
+        props.setMostrarPalavra(palavraOculta);
+        props.Reset();
     }
 }
